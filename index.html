@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Algo Designing: 10-Step Procedure</title>
+  <meta name="description" content="Beginner-friendly 10-step algorithm design framework for Angel One trading workflows." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+  <header class="app-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <div class="logo">A1</div>
+        <div>
+          <h1>Algo Designing Framework</h1>
+          <p class="subtitle">Crystal-clear, student-first guide to build your Angel One algo</p>
+	  <p class="subtitle"><strong>By Abhishek Gogna - Profession Algo Based Quantitative Research Analyst</strong></p>
+        </div>
+      </div>
+      <div class="header-actions">
+        <button id="themeToggle" class="btn ghost" aria-label="Toggle color theme">🌙</button>
+        <button id="startTour" class="btn primary">Start Guided Tour</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="intro">
+      <h2>Overview</h2>
+      <p>
+        This page walks you through a structured and simplified 10-step algorithm design workflow. 
+        Each step explains <strong>what</strong> to do, <strong>why</strong> it matters, and includes a 
+        <strong>Student Task</strong> to make learning hands-on.
+      </p>
+      <div class="intro-actions">
+        <a class="btn outline" href="#steps">Jump to Steps</a>
+        <button id="copyAllTasks" class="btn">Copy All Student Tasks</button>
+      </div>
+    </section>
+
+    <section id="steps" class="steps">
+      <h2>Algo Designing: 10 Steps Procedure</h2>
+
+      <!-- Step Template: Each card contains accordions for What / Why / Student Task -->
+      <div class="steps-grid">
+
+        <!-- Step 1 -->
+        <article class="step-card" id="step-1" data-step="1">
+          <div class="step-head">
+            <span class="pill">Step 1</span>
+            <h3>Login to Angel</h3>
+          </div>
+          <p class="step-summary">Connect to Angel One API using your API key and credentials.</p>
+          <div class="accordion">
+            <button class="accordion-trigger" aria-expanded="false">What</button>
+            <div class="accordion-panel">
+              <p>Connect to Angel One API using their API key and credentials.</p>
+            </div>
+
+            <button class="accordion-trigger" aria-expanded="false">Why</button>
+            <div class="accordion-panel">
+              <p>Without authentication, you cannot fetch market data or place orders.</p>
+            </div>
+
+            <button class="accordion-trigger" aria-expanded="false">Student Task</button>
+            <div class="accordion-panel task-panel">
+              <pre><code>Print "Login Successful" once connected.</code></pre>
+              <button class="btn small copy" data-clip="Print &quot;Login Successful&quot; once connected.">Copy Task</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Step 2 -->
+        <article class="step-card" id="step-2" data-step="2">
+          <div class="step-head">
+            <span class="pill">Step 2</span>
+            <h3>Download Master Data</h3>
+          </div>
+          <p class="step-summary">Fetch the instrument list (symbol, token, etc.) from Angel’s master file.</p>
+          <div class="accordion">
+            <button class="accordion-trigger" aria-expanded="false">What</button>
+            <div class="accordion-panel">
+              <p>Fetch the instrument list (symbol, token, etc.) from Angel’s master file.</p>
+            </div>
+            <button class="accordion-trigger" aria-expanded="false">Why</button>
+            <div class="accordion-panel">
+              <p>This helps map stock names to their unique trading tokens.</p>
+            </div>
+            <button class="accordion-trigger" aria-expanded="false">Student Task</button>
+            <div class="accordion-panel task-panel">
+              <pre><code>Print how many symbols were downloaded.</code></pre>
+              <button class="btn small copy" data-clip="Print how many symbols were downloaded.">Copy Task</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Step 3 -->
+        <article class="step-card" id="step-3" data-step="3">
+          <div class="step-head">
+            <span class="pill">Step 3</span>
+            <h3>Get LTP from Websocket</h3>
+          </div>
+          <p class="step-summary">Subscribe to live market feed to receive Last Traded Price (LTP).</p>
+          <div class="accordion">
+            <button class="accordion-trigger" aria-expanded="false">What</button>
+            <div class="accordion-panel">
+              <p>Subscribe to live market feed to receive Last Traded Price (LTP).</p>
+            </div>
+            <button class="accordion-trigger" aria-expanded="false">Why</button>
+            <div class="accordion-panel">
+              <p>Real-time prices are essential for any trading algorithm.</p>
+            </div>
+            <button class="accordion-trigger" aria-expanded="false">Student Task</button>
+            <div class="accordion-panel task-panel">
+              <pre><code>Print "LTP for RELIANCE = 2465.00" whenever price updates.</code></pre>
+              <button class="btn small copy" data-clip="Print &quot;LTP for RELIANCE = 2465.00&quot; whenever price updates.">Copy Task</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Step 4 -->
+        <article class="step-card" id="step-4" data-step="4">
+          <div class="step-head">
+            <span class="pill">Step 4</span>
+            <h3>Calculate EMA from Historical API</h3>
+          </div>
+          <p class="step-summary">Use historical candles (e.g., 5-min) to compute Exponential Moving Average (EMA).</p>
+          <div class="accordion">
+            <button class="accordion-trigger" aria-expanded="false">What</button>
+            <div class="accordion-panel">
+              <p>Use historical candles (e.g., 5-min) to compute Exponential Moving Average (EMA).</p>
+            </div>
+            <button class="accordion-trigger" aria-expanded="false">Why</button>
+            <div class="accordion-panel">
+              <p>EMA is the main indicator for your strategy.</p>
+            </div>
+            <button class="accordion-trigger" aria-expanded="false">Student Task</button>
+            <div class="accordion-panel task-panel">
+              <pre><code>Print latest EMA value on screen.</code></pre>
+              <button class="btn small copy" data-clip="Print latest EMA value on screen.">Copy Task</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Step 5 -->
+        <article class="step-card" id="step-5" data-step="5">
+          <div class="step-head">
+            <span class="pill">Step 5</span>
+            <h3>Apply Signal to Indicator</h3>
+          </div>
+          <p class="step-summary">Define buy/sell signals using EMA crossover logic.</p>
+          <div class="accordion">
+            <button class="accordion-trigger" aria-expanded="false">What</button>
+            <div class="accordion-panel">
+              <p>Define buy/sell signals using EMA crossover logic (e.g., EMA-12 &gt; EMA-26 → Buy).</p>
+            </div>
+            <button class="accordion-trigger" aria-expanded="false">Why</button>
+            <div class="accordion-panel">
+              <p>Strategy rules are the decision-making heart of the algo.</p>
+            </div>
+            <button class="accordion-trigger" aria-expanded="false">Student Task</button>
+            <div class="accordion-panel task-panel">
+              <pre><code>Print "Signal Triggered: BUY" when crossover happens.</code></pre>
+              <button class="btn small copy" data-clip="Print &quot;Signal Triggered: BUY&quot; when crossover happens.">Copy Task</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Step 6 -->
+        <article class="step-card" id="step-6" data-step="6">
+          <div class="step-head">
+            <span class="pill">Step 6</span>
+            <h3>Entry, Stop Loss, and Target</h3>
+          </div>
+          <p class="step-summary">Enter on crossover. SL = 2% below LTP for buy. Target = 3% above LTP.</p>
+          <div class="accordion">
+            <button class="accordion-trigger" aria-expanded="false">What</button>
+            <div class="accordion-panel">
+              <p>Enter trade on crossover. Set SL = 2% below LTP for buy trades. Set Target = 3% above LTP.</p>
+            </div>
+            <button class="accordion-trigger" aria-expanded="false">Why</button>
+            <div class="accordion-panel">
+              <p>Risk management and profit booking keep strategy controlled.</p>
+            </div>
+            <button class="accordion-trigger" aria-expanded="false">Student Task</button>
+            <div class="accordion-panel task-panel">
+              <pre><code>Print SL and Target values when order is placed.</code></pre>
+              <button class="btn small copy" data-clip="Print SL and Target values when order is placed.">Copy Task</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Step 7 -->
+        <article class="step-card" id="step-7" data-step="7">
+          <div class="step-head">
+            <span class="pill">Step 7</span>
+            <h3>Trailing Stop-Loss Logic</h3>
+          </div>
+          <p class="step-summary">For every 1% increase in price, trail SL by 0.5%.</p>
+          <div class="accordion">
+            <button class="accordion-trigger" aria-expanded="false">What</button>
+            <div class="accordion-panel">
+              <p>For every 1% increase in price, trail SL by 0.5%.</p>
+            </div>
+            <button class="accordion-trigger" aria-expanded="false">Why</button>
+            <div class="accordion-panel">
+              <p>Protects profits if the market reverses.</p>
+            </div>
+            <button class="accordion-trigger" aria-expanded="false">Student Task</button>
+            <div class="accordion-panel task-panel">
+              <pre><code>Print "Trailing SL modified to 2480.00".</code></pre>
+              <button class="btn small copy" data-clip="Print &quot;Trailing SL modified to 2480.00&quot;.">Copy Task</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Step 8 -->
+        <article class="step-card" id="step-8" data-step="8">
+          <div class="step-head">
+            <span class="pill">Step 8</span>
+            <h3>Paper Trade or Live Trade</h3>
+          </div>
+          <p class="step-summary">Add a switch: Paper trade (print only) or Live trade (place real orders).</p>
+          <div class="accordion">
+            <button class="accordion-trigger" aria-expanded="false">What</button>
+            <div class="accordion-panel">
+              <p>Add a switch: Paper trade = only print signals, no real orders. Live trade = place real orders using Angel API.</p>
+            </div>
+            <button class="accordion-trigger" aria-expanded="false">Why</button>
+            <div class="accordion-panel">
+              <p>Students can test without risking money.</p>
+            </div>
+            <button class="accordion-trigger" aria-expanded="false">Student Task</button>
+            <div class="accordion-panel task-panel">
+              <pre><code>Ask at runtime: "Do you want Paper Trade (Y/N)?"</code></pre>
+              <button class="btn small copy" data-clip="Ask at runtime: &quot;Do you want Paper Trade (Y/N)?&quot;">Copy Task</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Step 9 -->
+        <article class="step-card" id="step-9" data-step="9">
+          <div class="step-head">
+            <span class="pill">Step 9</span>
+            <h3>Order Management System</h3>
+          </div>
+          <p class="step-summary">Update SL/Target dynamically as price changes; manage trailing, exits, modifications.</p>
+          <div class="accordion">
+            <button class="accordion-trigger" aria-expanded="false">What</button>
+            <div class="accordion-panel">
+              <p>Ensure code updates stop-loss and target dynamically as price changes.</p>
+            </div>
+            <button class="accordion-trigger" aria-expanded="false">Why</button>
+            <div class="accordion-panel">
+              <p>Without OMS, you cannot implement trailing, exits, or modifications.</p>
+            </div>
+            <button class="accordion-trigger" aria-expanded="false">Student Task</button>
+            <div class="accordion-panel task-panel">
+              <pre><code>Print order status: "SL updated / Target hit / Trade closed".</code></pre>
+              <button class="btn small copy" data-clip="Print order status: &quot;SL updated / Target hit / Trade closed&quot;.">Copy Task</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Step 10 -->
+        <article class="step-card" id="step-10" data-step="10">
+          <div class="step-head">
+            <span class="pill">Step 10</span>
+            <h3>Print Step-by-Step Output</h3>
+          </div>
+          <p class="step-summary">Display what’s happening in plain English at each stage.</p>
+          <div class="accordion">
+            <button class="accordion-trigger" aria-expanded="false">What</button>
+            <div class="accordion-panel">
+              <p>At each stage, display what’s happening in plain English.</p>
+            </div>
+            <button class="accordion-trigger" aria-expanded="false">Why</button>
+            <div class="accordion-panel">
+              <p>Helps beginners and non-technical students visualize the process.</p>
+            </div>
+            <button class="accordion-trigger" aria-expanded="false">Example Print Flow</button>
+            <div class="accordion-panel task-panel">
+              <pre><code>Step 1: Login successful
+Step 2: Downloaded 235 symbols
+Step 3: Live LTP for INFY = 1532.50
+Step 4: EMA(20) = 1525.80
+Step 5: Signal Generated: BUY
+Step 6: Order Placed at 1532.50 | SL=1501.85 | Target=1578.47
+Step 7: Price up +1% | New SL=1518.00
+Step 8: Running in Paper Trade mode
+Step 9: Trade closed at Target 1578.47
+Step 10: Strategy completed</code></pre>
+              <button class="btn small copy" data-clip="Step 1: Login successful\nStep 2: Downloaded 235 symbols\nStep 3: Live LTP for INFY = 1532.50\nStep 4: EMA(20) = 1525.80\nStep 5: Signal Generated: BUY\nStep 6: Order Placed at 1532.50 | SL=1501.85 | Target=1578.47\nStep 7: Price up +1% | New SL=1518.00\nStep 8: Running in Paper Trade mode\nStep 9: Trade closed at Target 1578.47\nStep 10: Strategy completed">Copy Example</button>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <section class="console-section" aria-live="polite">
+      <div class="console-head">
+        <h2>Learning Console</h2>
+        <div class="console-actions">
+          <button id="playExample" class="btn">Play Example Flow</button>
+          <button id="clearConsole" class="btn ghost">Clear</button>
+        </div>
+      </div>
+      <pre id="console" class="console" tabindex="0" aria-label="Learning console output"></pre>
+    </section>
+  </main>
+
+  <footer class="app-footer">
+    <div class="container footer-inner">
+      <p>Built for students and beginners • Algo Learning - By Abhishek Gogna - Profession Algo Based Quantitative Research Analyst</p>
+      <nav class="footer-nav">
+        <a href="#steps">Back to Steps</a>
+        <a href="#" id="scrollTop">Scroll to Top</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="assets/script.js" defer></script>
+</body>
+</html>
